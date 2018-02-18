@@ -38,6 +38,6 @@ public class MainActivity extends AppCompatActivity {
     @Override protected void onDestroy() {
         super.onDestroy();
         // 防止内泄露
-        LeakSingle.getInstance(this.getApplication()).removeRetainedTextView();
+//        LeakSingle.getInstance(this.getApplication()).removeRetainedTextView();
     }
 }
