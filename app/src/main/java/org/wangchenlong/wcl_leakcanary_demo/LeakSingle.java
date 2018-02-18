@@ -1,7 +1,8 @@
-package me.chunyu.spike.wcl_leakcanary_demo;
+package org.wangchenlong.wcl_leakcanary_demo;
 
 import android.content.Context;
 import android.widget.TextView;
+
 
 /**
  * 泄露单例, 设计混乱, 单例只应该做事务性的工作, 页面操作应该使用回调.

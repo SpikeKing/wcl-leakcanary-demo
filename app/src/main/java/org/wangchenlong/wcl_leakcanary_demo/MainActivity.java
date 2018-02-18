@@ -1,4 +1,4 @@
-package me.chunyu.spike.wcl_leakcanary_demo;
+package org.wangchenlong.wcl_leakcanary_demo;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -18,19 +18,19 @@ public class MainActivity extends AppCompatActivity {
         ButterKnife.bind(this);
 
         /**
-         * me.chunyu.spike.wcl_leakcanary_demo.MainActivity has leaked:
-         * GC ROOT static me.chunyu.spike.wcl_leakcanary_demo.LeakSingle.sInstance
-         * references me.chunyu.spike.wcl_leakcanary_demo.LeakSingle.mContext
-         * leaks me.chunyu.spike.wcl_leakcanary_demo.MainActivity instance
+         * org.wangchenlong.wcl_leakcanary_demo.MainActivity has leaked:
+         * GC ROOT static org.wangchenlong.wcl_leakcanary_demo.LeakSingle.sInstance
+         * references org.wangchenlong.wcl_leakcanary_demo.LeakSingle.mContext
+         * leaks org.wangchenlong.wcl_leakcanary_demo.MainActivity instance
          */
 //        LeakSingle.getInstance(this).setRetainedTextView(mTvText);
 
         /**
-         * me.chunyu.spike.wcl_leakcanary_demo.MainActivity has leaked:
-         * GC ROOT static me.chunyu.spike.wcl_leakcanary_demo.LeakSingle.sInstance
-         * references me.chunyu.spike.wcl_leakcanary_demo.LeakSingle.mTextView
+         * org.wangchenlong.wcl_leakcanary_demo.MainActivity has leaked:
+         * GC ROOT static org.wangchenlong.wcl_leakcanary_demo.LeakSingle.sInstance
+         * references org.wangchenlong.wcl_leakcanary_demo.LeakSingle.mTextView
          * references android.support.v7.widget.AppCompatTextView.mContext
-         * leaks me.chunyu.spike.wcl_leakcanary_demo.MainActivity instance
+         * leaks org.wangchenlong.wcl_leakcanary_demo.MainActivity instance
          */
         LeakSingle.getInstance(this.getApplication()).setRetainedTextView(mTvText);
     }
