@@ -11,13 +11,14 @@ import android.widget.TextView;
  * Created by wangchenlong on 16/1/25.
  */
 public class LeakSingle {
-    private Context mContext;
-    private TextView mTextView;
+    private static LeakSingle sInstance;  // 单例
 
-    private static LeakSingle sInstance;
+    private Context mContext;  // 单例持有Context
+    private TextView mTextView;  // 单例持有视图控件
 
     private LeakSingle(Context context) {
-        mContext = context;
+        mContext = context;  // 容易导致内存泄漏
+//        mContext = context.getApplicationContext();  // 正确写法
     }
 
     public static LeakSingle getInstance(Context context) {
@@ -27,13 +28,13 @@ public class LeakSingle {
         return sInstance;
     }
 
-    // 内存泄露
+    // 持有视图控件，容易产生内存泄露
     public void setRetainedTextView(TextView tv) {
         mTextView = tv;
         mTextView.setText(mContext.getString(R.string.app_name));
     }
 
-    // 删除引用, 防止泄露
+    // 删除引用，防止泄露
     public void removeRetainedTextView() {
         mTextView = null;
     }

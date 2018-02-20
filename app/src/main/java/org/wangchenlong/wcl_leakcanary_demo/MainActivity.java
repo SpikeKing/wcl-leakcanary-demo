@@ -9,7 +9,7 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @Bind(R.id.main_tv_text) TextView mTvText;
+    @Bind(R.id.main_tv_text) TextView mTvText;  // 首页的文本控件
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +38,6 @@ public class MainActivity extends AppCompatActivity {
     @Override protected void onDestroy() {
         super.onDestroy();
         // 防止内泄露
-//        LeakSingle.getInstance(this.getApplication()).removeRetainedTextView();
+        LeakSingle.getInstance(this.getApplication()).removeRetainedTextView();
     }
 }

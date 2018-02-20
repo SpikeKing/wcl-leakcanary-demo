@@ -12,6 +12,6 @@ import com.squareup.leakcanary.LeakCanary;
 public class DemoApplication extends Application {
     @Override public void onCreate() {
         super.onCreate();
-        LeakCanary.install(this);
+        LeakCanary.install(this);  // 启用LeakCanary
     }
 }
